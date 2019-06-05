@@ -13,9 +13,10 @@ Gem::Specification.new do |s|
   s.platform = Gem::Platform::RUBY
   s.has_rdoc = true
 
-  s.add_dependency 'execjs', '~> 1.4.0'
-  s.add_dependency 'commonjs', '~> 0.2.6'
-  s.add_dependency 'escodegen', '~> 1.2.0'
+  # s.add_dependency 'execjs', '~> 1.4.0'
+  s.add_dependency 'execjs', '~> 2.7.0'
+  #s.add_dependency 'commonjs', '~> 0.2.6'
+  #s.add_dependency 'escodegen', '~> 1.2.0'
 
   s.add_development_dependency 'rake'
   s.add_development_dependency 'rspec', '~> 2.11.0'

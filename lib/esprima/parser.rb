@@ -4,10 +4,12 @@ module Esprima
   class Parser
     def initialize
       @esprima = Esprima.new_environment
+      @esprima.eval('function parse(code, opts) { return esprima.parse(code, opts); }')
     end
 
     def parse(code, opts = {})
-      Esprima::AST.new(to_ruby_hash(@esprima.parse(code, opts)), @esprima)
+      #Esprima::AST.new(to_ruby_hash(@esprima.parse(code, opts)), @esprima)
+      Esprima::AST.new(to_ruby_hash(@esprima.call('parse', code, opts)), @esprima)
     end
 
     def parse_file(file, opts = {})
